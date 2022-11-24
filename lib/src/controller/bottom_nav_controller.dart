@@ -1,31 +1,44 @@
+import 'package:flutter_inst/src/pages/upload.dart';
 import 'package:get/get.dart';
 
 enum PageName { HOME, SEARCH, UPLOAD, ACTIVITY, MYPAGE }
 
-class BottomNavController extends GetxController{
+class BottomNavController extends GetxController {
   RxInt pageIndex = 0.obs;
+  List<int> bottomHistory = [0];
 
-  void changeBottomNav(int value) {
-    var page = PageName.values[value];  // 위에 pagename을 0번째 1번째 이렇게 가져온다.
-    switch(page){
-
-      case PageName.HOME:
-        // TODO: Handle this case.
-        break;
-      case PageName.SEARCH:
-        // TODO: Handle this case.
-        break;
+  void changeBottomNav(int value, {bool hasGesture = true}) {
+    var page = PageName.values[value]; // 위에 pagename을 0번째 1번째 이렇게 가져온다.
+    switch (page) {
       case PageName.UPLOAD:
-        // TODO: Handle this case.
+      Get.to(()=>const Upload());
         break;
+      case PageName.HOME:
+      case PageName.SEARCH:
       case PageName.ACTIVITY:
-        // TODO: Handle this case.
-        break;
       case PageName.MYPAGE:
-        // TODO: Handle this case.
+        _changePage(value, hasGesture: hasGesture);
         break;
-    }
-
-    pageIndex(value);
     }
   }
+
+  void _changePage(int value, {bool hasGesture = true}) {
+    pageIndex(value);
+    if(!hasGesture) return;
+    bottomHistory.add(value);
+    print(bottomHistory);
+  }
+
+  Future<bool> willPopAction() async {
+    if(bottomHistory.length == 1) {
+      print('exit!');
+      return true;
+    }else{
+      print('goto before page!');
+      bottomHistory.removeLast();
+      var index = bottomHistory.last;
+      changeBottomNav(index, hasGesture: false);
+      return false;
+    }
+  }
+}
