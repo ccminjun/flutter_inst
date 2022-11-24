@@ -17,11 +17,10 @@ class BottomNavController extends GetxController {
       case PageName.SEARCH:
       case PageName.ACTIVITY:
       case PageName.MYPAGE:
-        _changePage(value, hasGesture: hasGesture);
+        _changePage(value, hasGesture: hasGesture); /* hasGesture 알아보기 */
         break;
     }
   }
-
   void _changePage(int value, {bool hasGesture = true}) {
     pageIndex(value);
     if(!hasGesture) return;
