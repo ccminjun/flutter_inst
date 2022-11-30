@@ -7,8 +7,9 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 1,
         title: Container(),
-
+        actions: [],
       ),
     );
   }
