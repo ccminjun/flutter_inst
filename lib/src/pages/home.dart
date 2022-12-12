@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_inst/src/components/avatar_widget.dart';
 import 'package:flutter_inst/src/components/image_data.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
 
-  Widget _storyBoadrList() {
+  Widget _storyBoardList() {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
         children: List.generate(
           100,
-          (index) => Container(
-            width: 60,
-            height: 60,
-            decoration:
-                BoxDecoration(shape: BoxShape.circle, color: Colors.grey),
+          (index) => AvatarWidget(
+            type: AvatarType.TYPE1,
+            thumbPath:
+            'https://cdn.searchenginejournal.com/wp-content/uploads/2022/04/reverse-image-search-627b7e49986b0-sej-760x400.png',
           ),
         ),
       ),
@@ -42,7 +42,7 @@ class Home extends StatelessWidget {
         ),
         body: ListView(
           children: [
-            _storyBoadrList(),
+            _storyBoardList(),
             // _postList(),
           ],
         ));
