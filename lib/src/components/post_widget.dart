@@ -1,5 +1,8 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_inst/src/components/avatar_widget.dart';
+import 'package:flutter_inst/src/components/image_data.dart';
 
 class PostWidget extends StatelessWidget {
   const PostWidget({Key? key}) : super(key: key);
@@ -9,8 +12,16 @@ class PostWidget extends StatelessWidget {
       children: [
         AvatarWidget(
           type: AvatarType.TYPE3,
+          size: 45,
           nickname: '개발하는민쥰',
           thumbPath: 'https://t1.daumcdn.net/cfile/tistory/24283C3858F778CA2E',
+        ),
+        GestureDetector(
+          onTap: () {},
+          child: ImageData(
+            IconsPath.postMoreIcon,
+            width: 30,
+          ),
         )
       ],
     );
