@@ -8,22 +8,29 @@ class PostWidget extends StatelessWidget {
   const PostWidget({Key? key}) : super(key: key);
 
   Widget _header() {
-    return Row(
-      children: [
-        AvatarWidget(
-          type: AvatarType.TYPE3,
-          size: 45,
-          nickname: '개발하는민쥰',
-          thumbPath: 'https://t1.daumcdn.net/cfile/tistory/24283C3858F778CA2E',
-        ),
-        GestureDetector(
-          onTap: () {},
-          child: ImageData(
-            IconsPath.postMoreIcon,
-            width: 30,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 15.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          AvatarWidget(
+            type: AvatarType.TYPE3,
+            size: 45,
+            nickname: '개발하는민쥰',
+            thumbPath: 'https://t1.daumcdn.net/cfile/tistory/24283C3858F778CA2E',
           ),
-        )
-      ],
+          GestureDetector(
+            onTap: () {},
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ImageData(
+                IconsPath.postMoreIcon,
+                width: 40,
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 

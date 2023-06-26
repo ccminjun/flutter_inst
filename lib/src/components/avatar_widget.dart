@@ -25,7 +25,7 @@ class AvatarWidget extends StatelessWidget {
       height: 65,
       margin: const EdgeInsets.symmetric(horizontal: 5),
       padding: const EdgeInsets.all(2),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topRight,
           end: Alignment.bottomLeft,
@@ -66,7 +66,7 @@ class AvatarWidget extends StatelessWidget {
           nickname ?? '',
           style: const TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 18,
+            fontSize: 16,
           ),
         ),
       ],
