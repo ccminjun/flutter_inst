@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_inst/src/components/image_data.dart';
 import 'package:flutter_inst/src/controller/bottom_nav_controller.dart';
+import 'package:flutter_inst/src/pages/Search.dart';
 import 'package:flutter_inst/src/pages/home.dart';
 import 'package:get/get.dart';
 
@@ -18,9 +19,7 @@ class App extends GetView<BottomNavController> {
             index: controller.pageIndex.value,
             children: [
               const Home(),
-              Container(
-                child: Center(child: Text('SERACH')),
-              ),
+              const Search(),
               Container(
                 child: Center(child: Text('UPLOAD')),
               ),

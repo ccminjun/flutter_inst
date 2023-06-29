@@ -11,9 +11,9 @@ class Home extends StatelessWidget {
       children: [
         AvatarWidget(
           type: AvatarType.TYPE2,
-          thumbPath: 'https://t1.daumcdn.net/cfile/tistory/24283C3858F778CA2E',
+          thumbPath: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrTFrhr_-pYR74jUgOy7IerAoHAX3zPIZZcg&usqp=CAU',
           size: 65,
-        ),
+         ),
         Positioned(
           right: 5,
           bottom: 0,
